@@ -1,0 +1,21 @@
+
+server:
+  port: 8888
+encrypt:
+  key: 123456
+#cloud:
+#  config:
+#    server:
+#      git:
+#        uri: https://github.com/xuhui8726132/config   # 配置git仓库的地址
+        #search-paths: config # git仓库地址下的相对地址，可以配置多个，用,分割。
+        #username: # git仓库的账号
+        #password: # git仓库的密码
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/xuhui8726132/config
