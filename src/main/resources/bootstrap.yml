@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8080
 encrypt:
   key: 123456
 #cloud:
@@ -10,11 +10,24 @@ encrypt:
         #search-paths: config # git仓库地址下的相对地址，可以配置多个，用,分割。
         #username: # git仓库的账号
         #password: # git仓库的密码
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://xuhui:xuhui123456@localhost:1111/eureka/
+  instance:
+    prefer-ip-address: true
 spring:
-  application:
-    name: config-server
   cloud:
     config:
       server:
         git:
           uri:  https://github.com/xuhui8726132/config
+  application:
+    name: config-server
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: xuhui
+    password: xuhui123
